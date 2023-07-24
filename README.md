@@ -64,7 +64,7 @@ MESSAGE_SENDER = {
 ```python
 @shared_task
 def send_data(data: dict[str, Any]) -> None:
-    data_gateway = DataGateway.objects.get('data_gateway_name')
+    data_gateway = DataGateway.objects.get(pk='data_gateway_name')
     message_builder = DefaultMessageBuilder(
         subject_template='app/subject_template.txt',
         body_template='app/body_template.txt',
